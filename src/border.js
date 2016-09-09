@@ -1,10 +1,14 @@
 import assign from './util/assign.js';
+import borderColor from './borderColor.js';
+import borderStyle from './borderStyle.js';
+import borderWidth from './borderWidth.js';
+import borderRadius from './borderRadius.js';
 
 export default function border(arg) {
   return assign({},
-    arg.color && borderColor(arg),
-    arg.style && borderStyle(arg),
-    arg.width && borderWidth(arg),
-    arg.radius && borderRadius(arg)
+    arg.color && borderColor(arg.color),
+    arg.style && borderStyle(arg.style),
+    arg.width && borderWidth(arg.width),
+    arg.radius && borderRadius(arg.radius)
   );
 }
