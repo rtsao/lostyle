@@ -1,5 +1,7 @@
 # lostyle
 
+[![npm version][npm-badge]][npm-href]
+
 A JavaScript style utility library
 
 ## Usage
@@ -34,3 +36,6 @@ border({
   borderBottomRadius: '3px' }
 */
 ```
+
+[npm-badge]: https://badge.fury.io/js/lostyle.svg
+[npm-href]: https://www.npmjs.com/package/lostyle
