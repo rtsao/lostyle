@@ -7,11 +7,11 @@ derivePkg({
   srcDir: basedir,
   destDir: path.join(basedir, 'dist'),
   transformFn: pkg => {
-    delete pkg.devDependencies;
-    delete pkg.scripts;
     return Object.assign({}, pkg, {
       main: 'index.js',
-      module: 'es/index.js'
+      module: 'es/index.js',
+      devDependencies: undefined,
+      scripts: undefined
     });
   }
 }, (err) => {
