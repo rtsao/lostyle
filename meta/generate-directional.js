@@ -44,7 +44,19 @@ module.exports = properties.map(args => ({
 
 function generateSrc(basename, {top, right, bottom, left}) {
   return (
-`export default function ${basename}(arg) {
+`/**
+ * Directional ${basename} helper
+ * @function ${basename}
+ * @param  {number|string|object} value
+ * @param  {number|string}        [value.x]      X-axis value
+ * @param  {number|string}        [value.y]      Y-axis value
+ * @param  {number|string}        [value.top]    Top value
+ * @param  {number|string}        [value.right]  Right value
+ * @param  {number|string}        [value.bottom] Bottom value
+ * @param  {number|string}        [value.left]   Left value
+ * @return {object}                              Style object
+ */
+export default function ${basename}(arg) {
   if (typeof arg === 'object' && arg !== null) {
     return assign({},
       arg.x && {${left}: arg.x, ${right}: arg.x},
