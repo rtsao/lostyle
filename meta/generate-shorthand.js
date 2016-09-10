@@ -22,16 +22,16 @@ function generateSrc(basename, props) {
   const maxLen = props.reduce((largest, property) => Math.max(largest, property.length), 0);
   const paramdocs = props.map(property => {
   const padding = Array(maxLen + 1 - property.length).fill(' ').join('');
-return ` * @param  {number|string}        [value.${property}]${padding}${basename} ${property} value`
+return ` * @param  {number|string} [value.${property}]${padding}${basename} ${property} value`
   });
 
   return (
 `/**
  * Shorthand ${basename} helper
  * @function ${basename}
- * @param  {number|string|object} value
+ * @param  {object}         value
 ${paramdocs.join('\n')}
- * @return {object}                       ${Array(maxLen).fill(' ').join('')} Style object
+ * @return {object}                 ${Array(maxLen).fill(' ').join('')} Style object
  */
 export default function ${basename}(arg) {
   return assign({},

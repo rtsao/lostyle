@@ -15,7 +15,10 @@
     "derive-pkg": "node meta/derive-package.js",
     "prepare-pkg": "npm run babel && npm run rollup && npm run derive-pkg",
     "publish-pkg": "npm run prepare-pkg && npm publish dist",
-    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json"
+    "generate-files": "node meta/generate-files.js",
+    "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json",
+    "predeploy-docs": "rm -rf docs && npm run generate-files && npm run generate-docs",
+    "deploy-docs": "push-dir --dir docs --branch gh-pages"
   },
   "dependencies": {},
   "devDependencies": {
@@ -24,6 +27,7 @@
     "derive-pkg-core": "^1.0.0",
     "docdash": "^0.4.0",
     "jsdoc": "^3.4.1",
+    "push-dir": "^0.2.2",
     "rollup": "^0.34.13"
   },
   "license": "MIT"

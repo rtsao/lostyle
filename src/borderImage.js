@@ -3,13 +3,13 @@ import assign from './util/assign.js';
 /**
  * Shorthand borderImage helper
  * @function borderImage
- * @param  {number|string|object} value
- * @param  {number|string}        [value.source] borderImage source value
- * @param  {number|string}        [value.slice]  borderImage slice value
- * @param  {number|string}        [value.width]  borderImage width value
- * @param  {number|string}        [value.outset] borderImage outset value
- * @param  {number|string}        [value.repeat] borderImage repeat value
- * @return {object}                              Style object
+ * @param  {object}         value
+ * @param  {number|string} [value.source] borderImage source value
+ * @param  {number|string} [value.slice]  borderImage slice value
+ * @param  {number|string} [value.width]  borderImage width value
+ * @param  {number|string} [value.outset] borderImage outset value
+ * @param  {number|string} [value.repeat] borderImage repeat value
+ * @return {object}                        Style object
  */
 export default function borderImage(arg) {
   return assign({},

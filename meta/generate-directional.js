@@ -47,14 +47,14 @@ function generateSrc(basename, {top, right, bottom, left}) {
 `/**
  * Directional ${basename} helper
  * @function ${basename}
- * @param  {number|string|object} value
- * @param  {number|string}        [value.x]      X-axis value
- * @param  {number|string}        [value.y]      Y-axis value
- * @param  {number|string}        [value.top]    Top value
- * @param  {number|string}        [value.right]  Right value
- * @param  {number|string}        [value.bottom] Bottom value
- * @param  {number|string}        [value.left]   Left value
- * @return {object}                              Style object
+ * @param  {number|string|object} value         Value for all directions or object of values:
+ * @param  {number|string}       [value.x]      Left and right value
+ * @param  {number|string}       [value.y]      Top and bottom value
+ * @param  {number|string}       [value.top]    Top value (takes precedence over y)
+ * @param  {number|string}       [value.right]  Right value (takes precedence over x)
+ * @param  {number|string}       [value.bottom] Bottom value (takes precedence over y)
+ * @param  {number|string}       [value.left]   Left value (takes precedence over x)
+ * @return {object}                             Style object
  */
 export default function ${basename}(arg) {
   if (typeof arg === 'object' && arg !== null) {
