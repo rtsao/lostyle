@@ -11,6 +11,30 @@ import assign from './util/assign.js';
  * @param  {number|string}       [value.bottom] Bottom value (takes precedence over y)
  * @param  {number|string}       [value.left]   Left value (takes precedence over x)
  * @return {object}                             Style object
+ * @example
+ * // All directions
+ * borderColor('foo');
+ * // → {
+ * //     borderTopColor: 'foo',
+ * //     borderRightColor: 'foo',
+ * //     borderBottomColor: 'foo',
+ * //     borderLeftColor: 'foo'
+ * //   }
+ * @example
+ * // A single axis
+ * borderColor({x: 'bar'});
+ * // → {
+ * //     borderLeftColor: 'bar',
+ * //     borderRightColor: 'bar'
+ * //   }
+ * @example
+ * // Any combination
+ * borderColor({y: 'foo', top: 'bar', right: 'baz'});
+ * // → {
+ * //     borderTopColor: 'bar',
+ * //     borderRightColor: 'baz',
+ * //     borderBottomColor: 'foo'
+ * //   }
  */
 export default function borderColor(arg) {
   if (typeof arg === 'object' && arg !== null) {

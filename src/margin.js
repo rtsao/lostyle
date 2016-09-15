@@ -11,6 +11,30 @@ import assign from './util/assign.js';
  * @param  {number|string}       [value.bottom] Bottom value (takes precedence over y)
  * @param  {number|string}       [value.left]   Left value (takes precedence over x)
  * @return {object}                             Style object
+ * @example
+ * // All directions
+ * margin('foo');
+ * // → {
+ * //     marginTop: 'foo',
+ * //     marginRight: 'foo',
+ * //     marginBottom: 'foo',
+ * //     marginLeft: 'foo'
+ * //   }
+ * @example
+ * // A single axis
+ * margin({x: 'bar'});
+ * // → {
+ * //     marginLeft: 'bar',
+ * //     marginRight: 'bar'
+ * //   }
+ * @example
+ * // Any combination
+ * margin({y: 'foo', top: 'bar', right: 'baz'});
+ * // → {
+ * //     marginTop: 'bar',
+ * //     marginRight: 'baz',
+ * //     marginBottom: 'foo'
+ * //   }
  */
 export default function margin(arg) {
   if (typeof arg === 'object' && arg !== null) {

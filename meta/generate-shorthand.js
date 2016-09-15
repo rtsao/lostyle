@@ -32,6 +32,19 @@ return ` * @param  {number|string} [value.${property}]${padding}${basename} ${pr
  * @param  {object}         value
 ${paramdocs.join('\n')}
  * @return {object}                 ${Array(maxLen).fill(' ').join('')} Style object
+ * @example
+ * // A single property
+ * ${basename}({${props[0]}: 'foo'});
+ * // → {
+ * //     ${joinShorthand(basename, props[0])}: 'foo'
+ * //   }
+ * @example
+ * // Multiple properties
+ * ${basename}({${props[0]}: 'foo', ${props[1]}: 'bar'});
+ * // → {
+ * //     ${joinShorthand(basename, props[0])}: 'foo',
+ * //     ${joinShorthand(basename, props[1])}: 'bar'
+ * //   }
  */
 export default function ${basename}(arg) {
   return assign({},

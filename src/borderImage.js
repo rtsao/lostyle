@@ -10,6 +10,19 @@ import assign from './util/assign.js';
  * @param  {number|string} [value.outset] borderImage outset value
  * @param  {number|string} [value.repeat] borderImage repeat value
  * @return {object}                        Style object
+ * @example
+ * // A single property
+ * borderImage({source: 'foo'});
+ * // → {
+ * //     borderImageSource: 'foo'
+ * //   }
+ * @example
+ * // Multiple properties
+ * borderImage({source: 'foo', slice: 'bar'});
+ * // → {
+ * //     borderImageSource: 'foo',
+ * //     borderImageSlice: 'bar'
+ * //   }
  */
 export default function borderImage(arg) {
   return assign({},

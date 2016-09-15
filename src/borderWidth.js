@@ -11,6 +11,30 @@ import assign from './util/assign.js';
  * @param  {number|string}       [value.bottom] Bottom value (takes precedence over y)
  * @param  {number|string}       [value.left]   Left value (takes precedence over x)
  * @return {object}                             Style object
+ * @example
+ * // All directions
+ * borderWidth('foo');
+ * // → {
+ * //     borderTopWidth: 'foo',
+ * //     borderRightWidth: 'foo',
+ * //     borderBottomWidth: 'foo',
+ * //     borderLeftWidth: 'foo'
+ * //   }
+ * @example
+ * // A single axis
+ * borderWidth({x: 'bar'});
+ * // → {
+ * //     borderLeftWidth: 'bar',
+ * //     borderRightWidth: 'bar'
+ * //   }
+ * @example
+ * // Any combination
+ * borderWidth({y: 'foo', top: 'bar', right: 'baz'});
+ * // → {
+ * //     borderTopWidth: 'bar',
+ * //     borderRightWidth: 'baz',
+ * //     borderBottomWidth: 'foo'
+ * //   }
  */
 export default function borderWidth(arg) {
   if (typeof arg === 'object' && arg !== null) {

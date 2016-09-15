@@ -11,6 +11,30 @@ import assign from './util/assign.js';
  * @param  {number|string}       [value.bottom] Bottom value (takes precedence over y)
  * @param  {number|string}       [value.left]   Left value (takes precedence over x)
  * @return {object}                             Style object
+ * @example
+ * // All directions
+ * padding('foo');
+ * // → {
+ * //     paddingTop: 'foo',
+ * //     paddingRight: 'foo',
+ * //     paddingBottom: 'foo',
+ * //     paddingLeft: 'foo'
+ * //   }
+ * @example
+ * // A single axis
+ * padding({x: 'bar'});
+ * // → {
+ * //     paddingLeft: 'bar',
+ * //     paddingRight: 'bar'
+ * //   }
+ * @example
+ * // Any combination
+ * padding({y: 'foo', top: 'bar', right: 'baz'});
+ * // → {
+ * //     paddingTop: 'bar',
+ * //     paddingRight: 'baz',
+ * //     paddingBottom: 'foo'
+ * //   }
  */
 export default function padding(arg) {
   if (typeof arg === 'object' && arg !== null) {

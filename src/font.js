@@ -11,6 +11,19 @@ import assign from './util/assign.js';
  * @param  {number|string} [value.size]    font size value
  * @param  {number|string} [value.family]  font family value
  * @return {object}                         Style object
+ * @example
+ * // A single property
+ * font({style: 'foo'});
+ * // → {
+ * //     fontStyle: 'foo'
+ * //   }
+ * @example
+ * // Multiple properties
+ * font({style: 'foo', variant: 'bar'});
+ * // → {
+ * //     fontStyle: 'foo',
+ * //     fontVariant: 'bar'
+ * //   }
  */
 export default function font(arg) {
   return assign({},

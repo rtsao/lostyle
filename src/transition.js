@@ -9,6 +9,19 @@ import assign from './util/assign.js';
  * @param  {number|string} [value.timingFunction] transition timingFunction value
  * @param  {number|string} [value.delay]          transition delay value
  * @return {object}                                Style object
+ * @example
+ * // A single property
+ * transition({property: 'foo'});
+ * // → {
+ * //     transitionProperty: 'foo'
+ * //   }
+ * @example
+ * // Multiple properties
+ * transition({property: 'foo', duration: 'bar'});
+ * // → {
+ * //     transitionProperty: 'foo',
+ * //     transitionDuration: 'bar'
+ * //   }
  */
 export default function transition(arg) {
   return assign({},

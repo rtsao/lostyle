@@ -55,6 +55,30 @@ function generateSrc(basename, {top, right, bottom, left}) {
  * @param  {number|string}       [value.bottom] Bottom value (takes precedence over y)
  * @param  {number|string}       [value.left]   Left value (takes precedence over x)
  * @return {object}                             Style object
+ * @example
+ * // All directions
+ * ${basename}('foo');
+ * // → {
+ * //     ${top}: 'foo',
+ * //     ${right}: 'foo',
+ * //     ${bottom}: 'foo',
+ * //     ${left}: 'foo'
+ * //   }
+ * @example
+ * // A single axis
+ * ${basename}({x: 'bar'});
+ * // → {
+ * //     ${left}: 'bar',
+ * //     ${right}: 'bar'
+ * //   }
+ * @example
+ * // Any combination
+ * ${basename}({y: 'foo', top: 'bar', right: 'baz'});
+ * // → {
+ * //     ${top}: 'bar',
+ * //     ${right}: 'baz',
+ * //     ${bottom}: 'foo'
+ * //   }
  */
 export default function ${basename}(arg) {
   if (typeof arg === 'object' && arg !== null) {

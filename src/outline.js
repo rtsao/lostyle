@@ -8,6 +8,19 @@ import assign from './util/assign.js';
  * @param  {number|string} [value.style] outline style value
  * @param  {number|string} [value.color] outline color value
  * @return {object}                       Style object
+ * @example
+ * // A single property
+ * outline({width: 'foo'});
+ * // → {
+ * //     outlineWidth: 'foo'
+ * //   }
+ * @example
+ * // Multiple properties
+ * outline({width: 'foo', style: 'bar'});
+ * // → {
+ * //     outlineWidth: 'foo',
+ * //     outlineStyle: 'bar'
+ * //   }
  */
 export default function outline(arg) {
   return assign({},

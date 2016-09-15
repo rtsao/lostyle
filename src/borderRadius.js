@@ -11,6 +11,30 @@ import assign from './util/assign.js';
  * @param  {number|string}       [value.bottom] Bottom value (takes precedence over y)
  * @param  {number|string}       [value.left]   Left value (takes precedence over x)
  * @return {object}                             Style object
+ * @example
+ * // All directions
+ * borderRadius('foo');
+ * // → {
+ * //     borderTopRadius: 'foo',
+ * //     borderRightRadius: 'foo',
+ * //     borderBottomRadius: 'foo',
+ * //     borderLeftRadius: 'foo'
+ * //   }
+ * @example
+ * // A single axis
+ * borderRadius({x: 'bar'});
+ * // → {
+ * //     borderLeftRadius: 'bar',
+ * //     borderRightRadius: 'bar'
+ * //   }
+ * @example
+ * // Any combination
+ * borderRadius({y: 'foo', top: 'bar', right: 'baz'});
+ * // → {
+ * //     borderTopRadius: 'bar',
+ * //     borderRightRadius: 'baz',
+ * //     borderBottomRadius: 'foo'
+ * //   }
  */
 export default function borderRadius(arg) {
   if (typeof arg === 'object' && arg !== null) {

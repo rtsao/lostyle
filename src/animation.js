@@ -13,6 +13,19 @@ import assign from './util/assign.js';
  * @param  {number|string} [value.fillMode]       animation fillMode value
  * @param  {number|string} [value.playState]      animation playState value
  * @return {object}                                Style object
+ * @example
+ * // A single property
+ * animation({name: 'foo'});
+ * // → {
+ * //     animationName: 'foo'
+ * //   }
+ * @example
+ * // Multiple properties
+ * animation({name: 'foo', duration: 'bar'});
+ * // → {
+ * //     animationName: 'foo',
+ * //     animationDuration: 'bar'
+ * //   }
  */
 export default function animation(arg) {
   return assign({},

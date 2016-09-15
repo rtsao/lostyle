@@ -13,6 +13,19 @@ import assign from './util/assign.js';
  * @param  {number|string} [value.attachment] background attachment value
  * @param  {number|string} [value.color]      background color value
  * @return {object}                            Style object
+ * @example
+ * // A single property
+ * background({image: 'foo'});
+ * // → {
+ * //     backgroundImage: 'foo'
+ * //   }
+ * @example
+ * // Multiple properties
+ * background({image: 'foo', position: 'bar'});
+ * // → {
+ * //     backgroundImage: 'foo',
+ * //     backgroundPosition: 'bar'
+ * //   }
  */
 export default function background(arg) {
   return assign({},
