@@ -1,6 +1,6 @@
 export default function directional(top, right, bottom, left) {
   return function(arg) {
-    const target = {};
+    var target = {};
     if (typeof arg === 'object' && arg !== null) {
       if (arg.x) { target[left] = arg.x; target[right] = arg.x; }
       if (arg.y) { target[top] = arg.y, target[bottom] = arg.y; }
