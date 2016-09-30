@@ -7,13 +7,7 @@ const srcPath = path.resolve(__dirname, '..', 'src');
 
 function writeFile({name, source}) {
   const dest = path.join(srcPath, `${name}.js`);
-  const contents = [
-    `import assign from './util/assign.js';\n`,
-    source,
-    ''
-  ].join('\n');
-
-  fs.writeFileSync(dest, contents, 'utf8');
+  fs.writeFileSync(dest, source, 'utf8');
 }
 
 directional.forEach(writeFile);

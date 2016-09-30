@@ -1,4 +1,4 @@
-import assign from './util/assign.js';
+import shorthand from './util/shorthand.js';
 
 /**
  * Shorthand transition helper
@@ -23,11 +23,9 @@ import assign from './util/assign.js';
  * //     transitionDuration: 'bar'
  * //   }
  */
-export default function transition(arg) {
-  return assign({},
-    arg.property && {transitionProperty: arg.property},
-    arg.duration && {transitionDuration: arg.duration},
-    arg.timingFunction && {transitionTimingFunction: arg.timingFunction},
-    arg.delay && {transitionDelay: arg.delay}
-  );
-}
+export default shorthand({
+  property: 'transitionProperty',
+  duration: 'transitionDuration',
+  timingFunction: 'transitionTimingFunction',
+  delay: 'transitionDelay'
+});

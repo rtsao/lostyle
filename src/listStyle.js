@@ -1,4 +1,4 @@
-import assign from './util/assign.js';
+import shorthand from './util/shorthand.js';
 
 /**
  * Shorthand listStyle helper
@@ -22,10 +22,8 @@ import assign from './util/assign.js';
  * //     listStylePosition: 'bar'
  * //   }
  */
-export default function listStyle(arg) {
-  return assign({},
-    arg.type && {listStyleType: arg.type},
-    arg.position && {listStylePosition: arg.position},
-    arg.image && {listStyleImage: arg.image}
-  );
-}
+export default shorthand({
+  type: 'listStyleType',
+  position: 'listStylePosition',
+  image: 'listStyleImage'
+});

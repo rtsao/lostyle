@@ -10,6 +10,7 @@
   "repository": "git@github.com:rtsao/lostyle.git",
   "bugs": "https://github.com/rtsao/lostyle/issues",
   "scripts": {
+    "test": "npm run babel && node dist/test/index.js",
     "babel": "babel src -d dist",
     "rollup": "rollup -o dist/es/index.js src/index.js",
     "derive-pkg": "node meta/derive-package.js",
@@ -28,7 +29,8 @@
     "docdash": "^0.4.0",
     "jsdoc": "^3.4.1",
     "push-dir": "^0.2.2",
-    "rollup": "^0.34.13"
+    "rollup": "^0.34.13",
+    "tape": "^4.6.0"
   },
   "license": "MIT"
 }

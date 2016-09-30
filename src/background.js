@@ -1,4 +1,4 @@
-import assign from './util/assign.js';
+import shorthand from './util/shorthand.js';
 
 /**
  * Shorthand background helper
@@ -27,15 +27,13 @@ import assign from './util/assign.js';
  * //     backgroundPosition: 'bar'
  * //   }
  */
-export default function background(arg) {
-  return assign({},
-    arg.image && {backgroundImage: arg.image},
-    arg.position && {backgroundPosition: arg.position},
-    arg.size && {backgroundSize: arg.size},
-    arg.repeat && {backgroundRepeat: arg.repeat},
-    arg.origin && {backgroundOrigin: arg.origin},
-    arg.clip && {backgroundClip: arg.clip},
-    arg.attachment && {backgroundAttachment: arg.attachment},
-    arg.color && {backgroundColor: arg.color}
-  );
-}
+export default shorthand({
+  image: 'backgroundImage',
+  position: 'backgroundPosition',
+  size: 'backgroundSize',
+  repeat: 'backgroundRepeat',
+  origin: 'backgroundOrigin',
+  clip: 'backgroundClip',
+  attachment: 'backgroundAttachment',
+  color: 'backgroundColor'
+});

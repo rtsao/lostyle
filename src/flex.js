@@ -1,4 +1,4 @@
-import assign from './util/assign.js';
+import shorthand from './util/shorthand.js';
 
 /**
  * Shorthand flex helper
@@ -22,10 +22,8 @@ import assign from './util/assign.js';
  * //     flexShrink: 'bar'
  * //   }
  */
-export default function flex(arg) {
-  return assign({},
-    arg.grow && {flexGrow: arg.grow},
-    arg.shrink && {flexShrink: arg.shrink},
-    arg.basis && {flexBasis: arg.basis}
-  );
-}
+export default shorthand({
+  grow: 'flexGrow',
+  shrink: 'flexShrink',
+  basis: 'flexBasis'
+});

@@ -16,7 +16,7 @@ module.exports = properties.map(args => ({
 
 function generateSrc(basename, props) {
   const stuff = props.map(property =>
-`    arg.${property} && {${joinShorthand(basename, property)}: arg.${property}}`
+`  ${property}: '${joinShorthand(basename, property)}'`
   );
 
   const maxLen = props.reduce((largest, property) => Math.max(largest, property.length), 0);
@@ -26,7 +26,9 @@ return ` * @param  {number|string} [value.${property}]${padding}${basename} ${pr
   });
 
   return (
-`/**
+`import shorthand from './util/shorthand.js';
+
+/**
  * Shorthand ${basename} helper
  * @function ${basename}
  * @param  {object}         value
@@ -46,12 +48,10 @@ ${paramdocs.join('\n')}
  * //     ${joinShorthand(basename, props[1])}: 'bar'
  * //   }
  */
-export default function ${basename}(arg) {
-  return assign({},
+export default shorthand({
 ${stuff.join(',\n')}
-  );
-}`
-);
+});
+`);
 }
 
 function joinShorthand(basename, shorthand) {

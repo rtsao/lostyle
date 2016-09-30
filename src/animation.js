@@ -1,4 +1,4 @@
-import assign from './util/assign.js';
+import shorthand from './util/shorthand.js';
 
 /**
  * Shorthand animation helper
@@ -27,15 +27,13 @@ import assign from './util/assign.js';
  * //     animationDuration: 'bar'
  * //   }
  */
-export default function animation(arg) {
-  return assign({},
-    arg.name && {animationName: arg.name},
-    arg.duration && {animationDuration: arg.duration},
-    arg.timingFunction && {animationTimingFunction: arg.timingFunction},
-    arg.delay && {animationDelay: arg.delay},
-    arg.iterationCount && {animationIterationCount: arg.iterationCount},
-    arg.direction && {animationDirection: arg.direction},
-    arg.fillMode && {animationFillMode: arg.fillMode},
-    arg.playState && {animationPlayState: arg.playState}
-  );
-}
+export default shorthand({
+  name: 'animationName',
+  duration: 'animationDuration',
+  timingFunction: 'animationTimingFunction',
+  delay: 'animationDelay',
+  iterationCount: 'animationIterationCount',
+  direction: 'animationDirection',
+  fillMode: 'animationFillMode',
+  playState: 'animationPlayState'
+});

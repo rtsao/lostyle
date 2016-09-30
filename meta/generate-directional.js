@@ -44,7 +44,9 @@ module.exports = properties.map(args => ({
 
 function generateSrc(basename, {top, right, bottom, left}) {
   return (
-`/**
+`import directional from './util/directional.js';
+
+/**
  * Directional ${basename} helper
  * @function ${basename}
  * @param  {number|string|object} value         Value for all directions or object of values:
@@ -80,22 +82,11 @@ function generateSrc(basename, {top, right, bottom, left}) {
  * //     ${bottom}: 'foo'
  * //   }
  */
-export default function ${basename}(arg) {
-  if (typeof arg === 'object' && arg !== null) {
-    return assign({},
-      arg.x && {${left}: arg.x, ${right}: arg.x},
-      arg.y && {${top}: arg.y, ${bottom}: arg.y},
-      arg.top && {${top}: arg.top},
-      arg.right && {${right}: arg.right},
-      arg.bottom && {${bottom}: arg.bottom},
-      arg.left && {${left}: arg.left}
-    );
-  }
-  return {
-    ${top}: arg,
-    ${right}: arg,
-    ${bottom}: arg,
-    ${left}: arg
-  };
-}`);
+export default directional(
+  '${top}',
+  '${right}',
+  '${bottom}',
+  '${left}'
+);
+`);
 }

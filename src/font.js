@@ -1,4 +1,4 @@
-import assign from './util/assign.js';
+import shorthand from './util/shorthand.js';
 
 /**
  * Shorthand font helper
@@ -25,13 +25,11 @@ import assign from './util/assign.js';
  * //     fontVariant: 'bar'
  * //   }
  */
-export default function font(arg) {
-  return assign({},
-    arg.style && {fontStyle: arg.style},
-    arg.variant && {fontVariant: arg.variant},
-    arg.weight && {fontWeight: arg.weight},
-    arg.stretch && {fontStretch: arg.stretch},
-    arg.size && {fontSize: arg.size},
-    arg.family && {fontFamily: arg.family}
-  );
-}
+export default shorthand({
+  style: 'fontStyle',
+  variant: 'fontVariant',
+  weight: 'fontWeight',
+  stretch: 'fontStretch',
+  size: 'fontSize',
+  family: 'fontFamily'
+});

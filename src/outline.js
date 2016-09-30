@@ -1,4 +1,4 @@
-import assign from './util/assign.js';
+import shorthand from './util/shorthand.js';
 
 /**
  * Shorthand outline helper
@@ -22,10 +22,8 @@ import assign from './util/assign.js';
  * //     outlineStyle: 'bar'
  * //   }
  */
-export default function outline(arg) {
-  return assign({},
-    arg.width && {outlineWidth: arg.width},
-    arg.style && {outlineStyle: arg.style},
-    arg.color && {outlineColor: arg.color}
-  );
-}
+export default shorthand({
+  width: 'outlineWidth',
+  style: 'outlineStyle',
+  color: 'outlineColor'
+});

@@ -1,4 +1,4 @@
-import assign from './util/assign.js';
+import shorthand from './util/shorthand.js';
 
 /**
  * Shorthand borderImage helper
@@ -24,12 +24,10 @@ import assign from './util/assign.js';
  * //     borderImageSlice: 'bar'
  * //   }
  */
-export default function borderImage(arg) {
-  return assign({},
-    arg.source && {borderImageSource: arg.source},
-    arg.slice && {borderImageSlice: arg.slice},
-    arg.width && {borderImageWidth: arg.width},
-    arg.outset && {borderImageOutset: arg.outset},
-    arg.repeat && {borderImageRepeat: arg.repeat}
-  );
-}
+export default shorthand({
+  source: 'borderImageSource',
+  slice: 'borderImageSlice',
+  width: 'borderImageWidth',
+  outset: 'borderImageOutset',
+  repeat: 'borderImageRepeat'
+});
