@@ -19,7 +19,7 @@
     "build": "npm run clean && npm run babel && npm run rollup",
     "generate-files": "node meta/generate-files.js",
     "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json",
-    "predeploy-docs": "rm -rf docs && npm run generate-files && npm run generate-docs",
+    "predeploy-docs": "rm -rf docs && npm run generate-files && npm run generate-docs && echo lostyle.js.org > docs/CNAME",
     "deploy-docs": "push-dir --dir docs --branch gh-pages",
     "prepublish": "(in-publish && npm run build) || echo skipping prepublish build"
   },
