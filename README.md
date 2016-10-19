@@ -1,4 +1,4 @@
-# lostyle
+# [lostyle](https://github.com/rtsao/lostyle)
 
 [![npm version][npm-badge]][npm-href]
 [![dependencies status][deps-badge]][deps-href]
