@@ -21,7 +21,7 @@
     "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json",
     "predeploy-docs": "rm -rf docs && npm run generate-files && npm run generate-docs",
     "deploy-docs": "push-dir --dir docs --branch gh-pages",
-    "prepublish": "npm run build"
+    "prepublish": "in-publish && npm run build"
   },
   "dependencies": {},
   "devDependencies": {
@@ -29,6 +29,7 @@
     "babel-plugin-polypackage": "^2.0.0-beta.1",
     "babel-plugin-transform-es2015-modules-simple-commonjs": "^0.3.0",
     "docdash": "^0.4.0",
+    "in-publish": "^2.0.0",
     "jsdoc": "^3.4.1",
     "push-dir": "^0.2.2",
     "rollup": "^0.34.13",
