@@ -21,7 +21,7 @@
     "generate-docs": "node_modules/.bin/jsdoc -c jsdoc.json",
     "predeploy-docs": "rm -rf docs && npm run generate-files && npm run generate-docs",
     "deploy-docs": "push-dir --dir docs --branch gh-pages",
-    "prepublish": "in-publish && npm run build"
+    "prepublish": "(in-publish && npm run build) || echo skipping prepublish build"
   },
   "dependencies": {},
   "devDependencies": {
