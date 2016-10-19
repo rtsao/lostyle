@@ -1,6 +1,7 @@
 # [lostyle](https://github.com/rtsao/lostyle)
 
 [![npm version][npm-badge]][npm-href]
+[![build status][build-badge]][build-href]
 [![dependencies status][deps-badge]][deps-href]
 [![license][license-badge]][license-href]
 
@@ -16,6 +17,8 @@ npm install lostyle --save
 
 [npm-badge]: https://badge.fury.io/js/lostyle.svg
 [npm-href]: https://www.npmjs.com/package/lostyle
+[build-badge]: https://travis-ci.org/rtsao/lostyle.svg?branch=master
+[build-href]: https://travis-ci.org/rtsao/lostyle
 [deps-badge]: https://img.shields.io/badge/dependencies-none-brightgreen.svg
 [deps-href]: https://david-dm.org/rtsao/lostyle
 [license-badge]: https://img.shields.io/github/license/rtsao/lostyle.svg?maxAge=2592000
