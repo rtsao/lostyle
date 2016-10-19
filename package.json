@@ -13,7 +13,7 @@
   "bugs": "https://github.com/rtsao/lostyle/issues",
   "scripts": {
     "test": "npm run babel && node dist/test/index.js",
-    "clean": "rm -rf dist && rm -rf dist -es && ls ./*.js | xargs rm",
+    "clean": "rm -rf dist && rm -rf dist-es && ls ./*.js | xargs rm",
     "babel": "babel src -d dist",
     "rollup": "rollup -o dist-es/index.js src/index.js",
     "build": "npm run clean && npm run babel && npm run rollup",
